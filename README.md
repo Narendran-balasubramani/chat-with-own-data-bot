@@ -1,15 +1,15 @@
 # Chat with your data using LLM
 
-# Scope of the Project
+## Scope of the Project
 This project aims on building a question answering bot that uses the **Langchain** framework and the **OpenAI GPT model**. The bot can answer questions about a specific set of documents that have been provided to it.
 
-# - LLMs
+## - LLMs
 <b>Large language models (LLMs)</b> are a type of artificial intelligence that can be used to understand and generate text. LLMs are trained on massive datasets of text, and they can be used for a variety of tasks, such as question answering, translation, and summarization.
 
-# - Langchain
+## - Langchain
 <b>Langchain</b> is an open-source framework for building natural language processing applications using large language models (LLMs). Langchain provides a standard interface for chains, lots of integrations with other tools, and end-to-end chains for common applications.
 
-# - Openai models
+## - Openai models
 OpenAI models are a suite of large language models (LLMs) that can be used for a variety of natural language processing (NLP) tasks. Some of the most popular OpenAI models include GPT-3.5 turbo, GPT-4, DALL-E.
 
 # Flow of the Project
