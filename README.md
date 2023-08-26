@@ -40,7 +40,10 @@ OpenAI models are a suite of large language models (LLMs) that can be used for a
 - This helps to improve the accuracy and efficiency of the query answering process.
 - Providing the model only the ranked results allows the model to focus on the most relevant results. This can improve the accuracy of the model's answer, as the model will not be distracted by irrelevant results.
 
-## 8) **Answer:**
-- Finally, the ranked results are passed to the LLM model along with the user query to generate an answer.
+## 8) **Memory:**
+- The bot is provided with a **buffer memory** of the most recent queries and answers. This allows the bot to learn from its previous interactions with users and improve its ability to answer future queries.
+
+## 9) **Answer:**
+- Finally, the ranked results and buffer memory are passed to the LLM model(**GPT-3.5 turbo**) along with the user query to generate an answer.
 
 
