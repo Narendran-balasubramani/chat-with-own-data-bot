@@ -56,7 +56,7 @@ with st.sidebar:
 
 
 # main page
-st.title('Chat with Bot 🤖')
+st.title('ConvoCraft: Your Intelligent Chat Companion 🤖')
 
 with st.chat_message("assistant"):
     st.markdown('Hi there👋 I\'m your friendly AI assistant. I can help you answer your queries by uploading your documents. Just ask me anything!')
