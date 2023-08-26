@@ -1,4 +1,4 @@
-# Chat with your data using LLM
+# ConvoCraft: Your Intelligent Chat Companion 🤖
 
 ## Scope of the Project
 This project aims on building a question answering bot that uses the **Langchain** framework and the **OpenAI GPT model**. The bot can answer questions about a specific set of documents that have been provided to it.
