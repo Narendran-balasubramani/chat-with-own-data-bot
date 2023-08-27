@@ -13,7 +13,7 @@ This project aims on building a question answering bot that uses the **Langchain
 OpenAI models are a suite of large language models (LLMs) that can be used for a variety of natural language processing (NLP) tasks. Some of the most popular OpenAI models include GPT-3.5 turbo, GPT-4, DALL-E.
 
 # Flow of the Project
-!['Flow diagram of this project](flow_diagram.png)
+!['Flow diagram of this project](Flow_diagram\flow.png)
 
 ## 1) <b>Documents:</b>
 -  The first step is to gather the documents that the bot will be able to answer questions about. These documents can be in either **PDF** or **CSV** format. 
