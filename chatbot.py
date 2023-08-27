@@ -71,22 +71,22 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # handling error
-try:
-    # checking for prompt
-    if prompt :=  st.chat_input('Write your prompt here...'):
-        # appending the user prompt to session state
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        # displaying the prompt 
-        with st.chat_message("user"):
-            st.markdown(prompt)
+# try:
+# checking for prompt
+if prompt :=  st.chat_input('Write your prompt here...'):
+    # appending the user prompt to session state
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    # displaying the prompt 
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-        # displaying the answer
-        with st.chat_message("assistant"):
-            # getting response from the model through chain
-            response = st.session_state.conversation({'question': prompt})
-            st.markdown(response['result'])
-        # adding the response from the model to session state
-        st.session_state.messages.append({"role": "assistant", "content": response})
+    # displaying the answer
+    with st.chat_message("assistant"):
+        # getting response from the model through chain
+        response = st.session_state.conversation({'question': prompt})
+        st.markdown(response['result'])
+    # adding the response from the model to session state
+    st.session_state.messages.append({"role": "assistant", "content": response})
 
-except:
-        st.warning('Please upload a vaild key/document.',icon='⚠️')
+# except:
+#         st.warning('Please upload a vaild key/document.',icon='⚠️')
