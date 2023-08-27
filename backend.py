@@ -44,7 +44,7 @@ def get_vectorstore(chunks,user_key):
 
 # Creating conversation chain
 def get_conversation_chain(vectorstore,user_key):
-    llm = ChatOpenAI(openai_api_key=user_key)
+    llm = ChatOpenAI(temperature=0.0,openai_api_key=user_key)
     # llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":512})
 
     memory =ConversationBufferMemory(
