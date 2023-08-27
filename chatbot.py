@@ -29,6 +29,12 @@ with st.sidebar:
         if st.button("Process"):
             try:
                 with st.spinner("Processing"):
+
+                    #initializing the coverstation variable in session state
+                    if "conversation" not in st.session_state:
+                        st.session_state.conversation = None
+
+                    # check for document type
                     if doc_preference == 'PDF':
                         # get pdf text
                         raw_text = pdf_reader(doc_input)
@@ -44,7 +50,7 @@ with st.sidebar:
 
                     # create vector store
                     vectorstore = get_vectorstore(text_chunks,user_key)
-
+                    
                     # create conversation chain
                     st.session_state.conversation = get_conversation_chain(
                         vectorstore,user_key)
@@ -65,28 +71,30 @@ with st.chat_message("assistant"):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+
+
 # Showing the previous conversation
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 # handling error
-# try:
-# checking for prompt
-if prompt :=  st.chat_input('Write your prompt here...'):
-    # appending the user prompt to session state
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    # displaying the prompt 
-    with st.chat_message("user"):
-        st.markdown(prompt)
+try:
+    # checking for prompt
+    if prompt :=  st.chat_input('Write your prompt here...'):
+        # appending the user prompt to session state
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        # displaying the prompt 
+        with st.chat_message("user"):
+            st.markdown(prompt)
 
-    # displaying the answer
-    with st.chat_message("assistant"):
-        # getting response from the model through chain
-        response = st.session_state.conversation({'question': prompt})
-        st.markdown(response['result'])
-    # adding the response from the model to session state
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        # displaying the answer
+        with st.chat_message("assistant"):
+            # getting response from the model through chain
+            response = st.session_state.conversation({'question': prompt})
+            st.markdown(response['answer'])
+        # adding the response from the model to session state
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
-# except:
-#         st.warning('Please upload a vaild key/document.',icon='⚠️')
+except:
+        st.warning('Please upload a vaild key/document.',icon='⚠️')
