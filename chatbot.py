@@ -21,6 +21,7 @@ with st.sidebar:
     # action for OpenAI model
     else:
         user_key =st.text_input('Enter your OpenAI API key',type='password')
+        st.write('[Link](https://platform.openai.com/account/api-keys) to get API key🔑')
     
         doc_preference= st.selectbox('Choose prefered document type: ',['PDF','CSV'])
         doc_input = st.file_uploader(f'Upload your {doc_preference}',[doc_preference], accept_multiple_files=False)
@@ -54,6 +55,8 @@ with st.sidebar:
                     # create conversation chain
                     st.session_state.conversation = get_conversation_chain(
                         vectorstore,user_key)
+                    
+                    st.write('Document processed successfully ✅')
             except:
                 st.warning('Please upload a vaild key/document.',icon='⚠️')
 
