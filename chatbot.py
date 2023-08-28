@@ -21,9 +21,9 @@ with st.sidebar:
     # action for OpenAI model
     else:
         user_key =st.text_input('Enter your OpenAI API key',type='password')
-        st.write('[Link](https://platform.openai.com/account/api-keys) to get API key🔑')
+        st.write('[Link](https://platform.openai.com/account/api-keys) to obtain an API key🔑')
     
-        doc_preference= st.selectbox('Choose prefered document type: ',['PDF','CSV'])
+        doc_preference= st.selectbox('Choose a preferred document type: ',['PDF','CSV'])
         doc_input = st.file_uploader(f'Upload your {doc_preference}',[doc_preference], accept_multiple_files=False)
         
     
@@ -58,7 +58,7 @@ with st.sidebar:
                     
                     st.write('Document processed successfully ✅')
             except:
-                st.warning('Please upload a vaild key/document.',icon='⚠️')
+                st.warning('Please upload a valid key/document.',icon='⚠️')
 
 #--------------------------------------------------------------------------------------------------------
 
@@ -84,7 +84,7 @@ for message in st.session_state.messages:
 # handling error
 try:
     # checking for prompt
-    if prompt :=  st.chat_input('Write your prompt here...'):
+    if prompt :=  st.chat_input('Ask your query here...'):
         # appending the user prompt to session state
         st.session_state.messages.append({"role": "user", "content": prompt})
         # displaying the prompt 
@@ -100,4 +100,4 @@ try:
         st.session_state.messages.append({"role": "assistant", "content": response['answer']})
 
 except:
-        st.warning('Please upload a vaild key/document.',icon='⚠️')
+        st.warning('Please upload a valid key/document.',icon='⚠️')
