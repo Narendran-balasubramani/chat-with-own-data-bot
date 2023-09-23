@@ -1,5 +1,7 @@
 # ConvoCraft: Your Intelligent Chat Companion 🤖
 
+Here is the link to my video on this application which will give an clear idea about this project : https://drive.google.com/file/d/1tm94gk13DYC_rwtOvXWhVC4EpczO4Ubx/view?usp=drive_link
+
 ## Scope of the Project
 This project aims on building a question answering bot that uses the **Langchain** framework and the **OpenAI GPT model**. The bot can answer questions about a specific set of documents that have been provided to it.
 
